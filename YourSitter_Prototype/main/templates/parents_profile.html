@@ -1,0 +1,520 @@
+<!-- *** HTMl page displayed to a parent after login-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Homepage</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 	<link rel="stylesheet" href="Homepage.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+		</head>
+	<style>
+	
+  
+    
+.navbar{
+ margin-bottom: 0 !important;
+ border-radius: 0 !important;
+ background-color:#5E4485;
+ color: #fff;
+ font-size: 1.2em;   
+ border: 0;
+ }
+ 
+ .navbar-header p {
+ font-size:1.7em;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: italic;
+   margin: auto;
+   margin-top: 5px;
+ }
+ 
+ .navbar-brand {
+   float:left;
+   min-height:55px;
+ }
+ 
+ .navbar-inverse .navbar-nav .active a,  .navbar-inverse .navbar-nav .active a:focus,  .navbar-inverse .navbar-nav .active a:hover{
+   color: #fff;
+   background-color: #5e4485;
+ }
+
+ .navbar-inverse {
+   background-color: #5e4485 !important;
+   border-color: #5e4485 !important;
+ }
+
+ 
+ .navbar-inverse .navbar li a {
+   color:  #d5d5d5;
+ }
+
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  font-size: 1em;
+}
+
+body{
+    background:#eee;    
+}
+.main-box.no-header {
+    padding-top: 20px;
+}
+.main-box {
+    background: #FFFFFF;
+    -webkit-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -moz-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -o-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    -ms-box-shadow: 1px 1px 2px 0 #CCCCCC;
+    box-shadow: 1px 1px 2px 0 #CCCCCC;
+    margin-bottom: 16px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  width:100%;
+}
+.table a.table-link.danger {
+    color: #e74c3c;
+}
+.label {
+    border-radius: 3px;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+.user-list tbody td .user-subhead {
+    font-size: 0.875em;
+    font-style: italic;
+}
+.user-list tbody td .user-link {
+    display: block;
+    font-size: 1.25em;
+    padding-top: 3px;
+    margin-left: 60px;
+}
+a {
+    color: #3498db;
+    outline: none!important;
+}
+.user-list tbody td>img {
+    position: relative;
+    max-width: 50px;
+    float: left;
+    margin-right: 15px;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.table thead tr th {
+    border-bottom: 2px solid #e7ebee;
+}
+.table tbody tr td:first-child {
+    font-size: 1.125em;
+    font-weight: 300;
+}
+.table tbody tr td {
+    font-size: 0.875em;
+    vertical-align: middle;
+    border-top: 1px solid #e7ebee;
+    padding: 12px 8px;
+}
+
+.container {
+overflow-x: hidden;}
+
+.modal-content h5{
+font-size: 2em;
+}
+
+.modal-content input[type=text] {
+  font-size: 1.5em;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 80%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+ @media (max-width:600px) {
+ .carousel-caption{
+ display:none;
+ }
+ }
+
+@media screen and (max-width: 600px) {
+  .footer {
+    width: 100%;
+    font-size: 1em;
+  }
+  
+  .row {
+    width: 100%;
+    font-size: 0.5em;
+  }
+  
+  .row button{
+    width: 100%;
+    font-size: 5em;
+  }
+  
+  .tab-pane {
+  width: 100%;
+    font-size: 0.5em;
+  }
+  
+  .tab-pane h3{
+  font-size: 2em;
+  }
+  
+  .tab-pane label{
+  font-size: 3em;
+  }
+  
+  .tab-pane p{
+  font-size: 2.5em;
+  }
+  
+  .tab-pane button{
+  font-size: 1.5em;
+  }
+  
+  .modal-content {
+    font-size: 2em;
+  }
+  
+}
+ 	</style>
+	
+
+	<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>YourSitter</p>
+
+<!-- Responsive navigation bar-->
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+				  <li><a href="{{ url_for('index') }}#about">About</a></li>
+					<li><a href="#">Contact Us</a></li>
+          <li><a href="{{ url_for('logout') }}">LogOut</a></li>
+					</ul>
+			</div>
+		</div>
+	</nav>
+
+
+<div class="container">
+  <h2>Welcome {{ session['first_name'] }}</h2>
+
+  {% if key == True %}
+  <ul class="nav nav-tabs">
+
+<!-- Active tab for profile -->
+
+    <li><a data-toggle="tab" href="#home">Profile</a></li>
+
+<!-- Toggel tabe for available sitters lsit -->
+
+    <li class="active"><a data-toggle="tab" href="#menu1" onload="activePage()">Available Sitters</a></li>
+  </ul>
+  {% else %}
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
+    <li><a data-toggle="tab" href="#menu1">Available Sitters</a></li>
+  </ul>
+  {% endif %}
+
+
+
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      
+
+<!-- Display current user details using a session variable -->
+
+      <h3>User Profile</h3>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">First Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p>{{ session['first_name'] }}</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Last Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p>{{ session['last_name'] }}</p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                                                                
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Email id</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p>{{ session['email'] }}</p>
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Password</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <p>**********</p>
+                                            </div>
+                                        </div>
+                                        <hr/>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Update Profile Details
+</button> <br>
+
+<!-- Modal form to  update profile information-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    <h5 class="modal-title" id="exampleModalLongTitle">Update information</h5>
+      </div>
+      <div class="modal-body">
+
+  <form action="{{url_for('parents_profile') }}" method="POST" id="change_details">
+
+        
+        <div class="form-group">
+          <label for="exampleInputPassword1">First Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First Name" name="fname">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Last Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name" name="lname">
+        </div>
+
+        
+        <div class="form-group">
+          <label for="exampleInputPassword1">New Password</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        </div>
+
+
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick= "submitPassword()">Save changes</button>
+      </div>f
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="menu1" class="tab-pane fade">
+      <h3>Available Sitters</h3>
+    <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter1">
+        Change Location
+      </button>
+
+
+<!-- Sitter Display Segment-->
+
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                  
+<!-- Making table dispaly responsive-- >
+
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>User</span></th>
+                                <th class="text-center"><span>Location</span></th>
+                                <th><span>Email</span></th>
+                                
+                                <th>Reservation</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+
+<!-- Jinja code that accepts list of all users and sitters and runs query to display specific records -->
+
+                          {% for s in Sitter %} 
+                            {% for u in User %}
+                                {% if (u.UserEmail == s.SEmail) and (u.is_Active ==1) %}
+                                <tr>
+                                    <td>
+                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <a href="#" class="user-link">{{ u.UserFName }} {{ u.UserLName }}</a>
+                                        <span class="user-subhead">(Member)</span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-success"> {{ s.SZipcode }} </span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{ u.UserEmail }}</a>
+                                    </td>
+                                    
+                                  <td>
+                                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+                                      Book
+                                      </button>
+                                
+
+
+<!-- Modal to initiate a booking-->
+                                        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                                            </div>
+                                            <div class="modal-body">
+                                            Appointment has been initiated. Your preferred sitter will contact you soon. 
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+                                          </div>
+                                        </div>                  
+                  
+                                      </td>
+                                </tr>
+
+                                {% endif %}    
+                            {% endfor %}
+                          {% endfor %}
+
+
+                              </tbody>                           
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Modal form to update list of displayed siiters based on zipcode-->
+
+
+
+      <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="exampleModalLongTitle">Change search location</h5>
+            </div>
+              <div class="modal-body">
+                <form action="{{url_for('parents_profile') }}" method="POST" id="change_loc">
+
+              <input class="text" type="text" placeholder="Enter Zipcode.." name="zipcode">
+              </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+              <button type="button" class="btn btn-primary" onclick= "submitZipcodeForm()" >Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<hr>
+
+<!-- Footer segment-->
+  
+
+  <div class="footer">
+    <p>&#169 Developed by TEAM 18</p>
+  </div>
+
+
+
+
+<!-- Function that submits a form, displays a specific tab and sends the zipcode data back to parents_profile HTMl for rendering acvailable siiters -->
+
+<script>
+  function submitZipcodeForm()
+  { 
+    
+    $('#change_loc').submit();
+    $('#menu1').tab('show')
+    return redirect("{{ url_for('parents_profile') }}#menu1")
+    }
+</script>
+
+
+<!-- Function that submits a form, displays a specific tab and sends the updated profile details back to parents_profile HTMl for rendering -->
+
+
+<script>
+  function submitPassword()
+  { 
+    
+    $('#change_details').submit();
+    $('#home').tab('show')
+    return redirect("{{ url_for('parents_profile') }}#home")
+
+    alert('Password has been changed successfully');
+    }
+</script>
+
+</body>
+
+
+</html>

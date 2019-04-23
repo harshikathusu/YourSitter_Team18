@@ -1,0 +1,113 @@
+
+
+<!-- HTML page for a parent to signup -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+<!--This section contains the head which includes the title of the webpage 
+		and the link of the stylesheet used for web font consistancy in all the web pages -->
+
+		<meta charset="utf-8">
+		<title>Signup</title>
+		<!-- using viewport to adjust the screen width as per the device screen width -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+
+		<!-- linking the css used for this html page-->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+
+
+<!-- Main body of the page -->
+
+<body>
+		<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>YourSitter</p>
+
+<!-- Navigation bar -->
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About</a></li>
+					
+					<li><a id="login" href="{{ url_for('login') }}">LogIn</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<!--  Display messages to a user -->
+
+	<center><h2 id='message'>
+		{% with messages = get_flashed_messages() %}
+            	{% if messages %}
+            	<ul>
+                {% for message in messages %}
+                	<li>{{ message }}</li>
+                {% endfor %}
+            	</ul>
+            	{% endif %}
+        	{% endwith %}
+    </h2></center>
+
+	<div class="main-w3layouts wrapper">
+		
+		<h1>Parents: create your account</h1>
+		
+
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+
+<!-- Form to accept user input to signup a parent -->
+
+				<form action="" method="post">
+					
+					<p>Looking to become a sitter? <a href="{{ url_for('sittersignup2') }}">Signup here.</a></p><br>
+					<input class="text" type="text" name="firstname" placeholder="First Name" required=""><br>
+					<input class="text" type="text" name="lastname" placeholder="Last Name" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" type="password" name="confirmpassword" placeholder="Confirm Password" required="">
+					<input class="text" type="number" name="zip" placeholder="Zip Code" required=""> <br>
+
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="" style="display:inline">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					
+					
+					<input type="submit" value="SIGNUP">
+				</form>
+				<p>Already have an Account? <a href="{{ url_for('login') }}"> Login Now!</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&#169 Developed by TEAM 18</p>
+	</div>
+	
+</body>
+</html>

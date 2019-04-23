@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" Content= "ie-edge">
+		<title>
+
+Welcome</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='Landing_page.css') }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+	 
+<style>
+.navbar{
+ margin-bottom: 0 !important;
+ border-radius: 0 !important;
+ background-color:#5E4485;
+ color: #fff;
+ font-size: 1.2em;   
+ border: 0;
+ }
+ 
+ .navbar-header p {
+ font-size:1.7em;
+   font-family: Arial, Helvetica, sans-serif;
+   font-style: italic;
+   margin: auto;
+   margin-top: 5px;
+ }
+ 
+ .navbar-brand {
+   float:left;
+   min-height:55px;
+ }
+ 
+ .navbar-inverse .navbar-nav .active a,  .navbar-inverse .navbar-nav .active a:focus,  .navbar-inverse .navbar-nav .active a:hover{
+   color: #fff;
+   background-color: #5e4485;
+ }
+
+ .navbar-inverse {
+   background-color: #5e4485 !important;
+   border-color: #5e4485 !important;
+ }
+
+ 
+ .navbar-inverse .navbar li a {
+   color:  #d5d5d5;
+ }
+
+
+</style>
+</head>
+	<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>YourSitter</p>
+				<!-- <a class="nav-brand" href="#"> <img src="Sitter1.jpg"></a> -->
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="{{ url_for('login') }}">LogIn</a></li>
+					<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		<div id ="showcase">
+		<div class="TextBox">
+		<h1>Welcome to the family</h1>
+		<p> Please enter your zip code...</p>
+
+		<form class="form-inline" method="POST" action="">
+		{{ form.hidden_tag() }}
+		
+		<!-- <label for="inputZipCode" class="sr-only">ZipCode</label> -->
+		
+		<p>{{ form.zipcode }}</p>
+                <p>{{ form.submit }}</p>
+
+		<!-- <input type="text" class="form-control" id="inputZipCode" placeholder="ZipCode"> -->
+			
+		</form>
+
+		</div>
+		</div>	
+	
+<div class="footer">
+		<p>&#169 Developed by TEAM 18</p>
+ </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SitterSignup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='sittersignup.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+		<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target= "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>YourSitter</p>
+				<!-- <a class="nav-brand" href="#"> <img src="Sitter1.jpg"></a> -->
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a id="login" href="{{ url_for('login') }}">LogIn</a></li>
+					<!-- <li><a href="signup.html">Sign Up</a></li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- main -->
+
+	<center><h2 id='message'>
+		{% with messages = get_flashed_messages() %}
+            	{% if messages %}
+            	<ul>
+                {% for message in messages %}
+                	<li>{{ message }}</li>
+                {% endfor %}
+            	</ul>
+            	{% endif %}
+        	{% endwith %}
+    </h2></center>
+
+
+	<div class="main-w3layouts wrapper">
+		<!-- <div class="ifsitter">
+			<p>Looking to become a sitter? <a href="sittersignup.html">Signup here.</a></p>
+		</div> -->
+		<h1>Sitters: create your account</h1>
+		<!-- <div class="alert alert-warning" role="alert">
+		<a href="#" class="alert-link">an example link</a>. Give it a click if you like. -->
+	    
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="#" method="post">
+					<p>Looking for Sitters? <a href="{{ url_for('signup') }}">Signup here.</a></p><br>
+					<!-- <input class="text" type="text" name="firstname" placeholder="First Name" required=""><br>
+					<input class="text" type="text" name="lastname" placeholder="Last Name" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+					<input class="text" type="number" name="zip" placeholder="Zipcode" required=""></br>
+					<div class="services" style="display:inline"> -->
+
+						<p>
+						{{ form.email.label }}
+						{{ form.email }}
+					</p>	
+					<p>
+						{{ form.userfname.label }}
+						{{ form.userfname }}
+					</p>					
+					<p>
+						{{ form.userlname.label }}
+						{{ form.userlname }}
+					</p>
+					<p>
+						{{ form.password.label }}
+						{{ form.password }}
+					</p>
+					<p>
+						{{ form.confirm_password.label }}
+						{{ form.confirm_password }}
+					</p>
+
+					<p>
+						{{ form.zipcode.label }}
+						{{ form.zipcode }}
+					</p>
+						
+						<label class="anim">
+						<p style="display:inline">Interested in : <p>
+							<input type="checkbox" class="checkbox" required="" style="" >>
+							<img src="/static/images/babycare.JPG" title="babysitting">
+							<!-- <input type="checkbox" class="checkbox" required="" style="display:inline"> -->
+							<input type="checkbox" class="checkbox" required="" style="">
+							<img src="/static/images/elderlycare.JPG" title="babysitting">
+						</label> 
+
+						<!-- <input type="image" src="stroller.jpg" name="babysitting" ></a>
+						<input type="image" src="babychange.jpg" name="babysitting" ></a>
+						<input type="image" src="caresitter.jpg" name="babysitting" ></a> -->
+						<!-- <a href="#" ><img src="caresitter.jpg" title="babysitting"></a>
+						<a href="#" ><img src="babychange.jpg" title="babysitting"></a> -->
+						<!-- <label class="anim">
+						    <span>Services you can provide:</span><br>
+							<input type="checkbox" class="checkbox" required="" style="display:inline">
+							<span>Babysitting</span>
+						</label> -->
+						<!-- <div class="clear"> </div> -->
+
+					</div>
+					<input type="submit" value="SIGNUP">
+				</form>
+				<p>Already have an Account? <a href="{{ url_for('login') }}"> Login Now!</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&#169 Developed by TEAM 18</p>
+	</div>
+	<!-- //main -->
+</body>
+</html>

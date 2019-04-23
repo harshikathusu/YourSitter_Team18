@@ -1,0 +1,76 @@
+ <!-- *** Start of html code for Login Page of YourSitter Website  *****-->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<!--This section contains the head which includes the title of the webpage 
+		and the link of the stylesheet used for web font consistancy in all the web pages -->
+		
+		<meta charset="utf-8">
+		<title>YourSitterLoginup</title>
+		<!-- using viewport to adjust the screen width as per the device screen width -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- linking the css used for this html page-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+		<!-- //Custom Theme files -->
+		<!-- web font -->
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+		<!-- //web font -->
+
+</head>
+<body><!-- This section contains the main body of the web page which forms the login form of the YourSitter Website -->	
+	
+	<div class="main-w3layouts wrapper">
+	
+		<!-- This is the cental heading of the page -->
+		<h1>YourSitter</h1>
+		
+		<!-- Code to display messages to the user -->
+
+		<center><h2  id='message'>
+		{% with messages = get_flashed_messages() %}
+            	{% if messages %}
+            	<ul>
+                {% for message in messages %}
+                	<li>{{ message }}</li>
+                {% endfor %}
+            	</ul>
+            	{% endif %}
+        	{% endwith %}
+    	</h2></center>
+
+	    <!-- This is the main section which includes the form -->
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+			       <!--- Form of the page ---->
+				<form action="#" method="post">
+					
+					<p id='heading'>LOGIN </p><br>
+					
+					<input class="text email" type="email" placeholder="Email" required="" name="email"> 
+					
+					 
+
+					<input class="text" type="password" name="password" placeholder="Password" required="" ><br>
+					
+
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" style="display:inline">
+							<span>Remember me</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					
+
+					<input type="submit" value="LOGIN">
+
+				</form>
+				   <!-- End of the form -->
+				<p>Dont have an Account? <a href="{{ url_for('signup') }}"> Signup Now!</a></p>
+			</div>
+		</div>
+		
+	</div>
+</body><!-- end of the body tag -->
+</html><!-- end of the html page -->

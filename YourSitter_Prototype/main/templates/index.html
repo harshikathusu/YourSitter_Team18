@@ -1,0 +1,198 @@
+ <!-- *** Start of html code for Home  Page of YourSitter Website  *****-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!--This section contains the head which includes the title of the webpage 
+		and the link of the stylesheet used for web font consistancy in all the web pages -->
+		
+		<title> Homepage</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- using viewport to adjust the screen width as per the device screen width -->
+		<!-- linking the css used for this html page-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+		<!-- //Custom Theme files -->
+		<!-- web font -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+	
+	</head>
+	
+	<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class = "navbar-toggle" data-toggle="collapse" data-target = "#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<p>YourSitter</p>
+				
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('index') }}#about">About</a></li>
+					
+					<li><a  href="{{ url_for('login') }}">LogIn</a></li>
+					<li><a id="signup" href="{{ url_for('signup') }}">Sign Up</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<!-- Code to display messages to the user -->
+	<center><h2 id='message'>
+		{% with messages = get_flashed_messages() %}
+            	{% if messages %}
+            	<ul>
+                {% for message in messages %}
+                	<li>{{ message }}</li>
+                {% endfor %}
+            	</ul>
+            	{% endif %}
+        	{% endwith %}
+    </h2></center>
+
+<!-- Container for sliding images -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+		<ol class = "carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+	
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				
+				<img src = "/static/images/sittersignup.jpg">
+				<div class="carousel-caption">
+					<h1>The Care you need</h1>
+					<br>
+					<a class="btn btn-default" href="#part2" type="button"> Get Started</a>
+					
+				</div>
+ 			</div>
+			<div class= "item"> 
+				
+				<img src= "/static/images/pic17.jpg">
+				<div class="carousel-caption">
+				<h1>The trust your family deserves.</h1>
+				<br>
+				<a class="btn btn-default" href="#part2" type="button"> Get Started</a>
+				
+				</div>
+			</div>
+			<div class= "item"> 
+				
+				<img src= "/static/images/pic4.jpg">
+				<div class="carousel-caption">
+				<h1>The jobs you will love.</h1>
+				<br>
+				<a class="btn btn-default" href="#part2" type="button" > Get Started</a>
+				
+				</div>
+			</div>
+
+<!-- Option for user to scroll through the displayed images -->
+
+		</div>
+		<a class= "left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+		</a>
+
+		<a class= "right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+		</a>
+
+		</div>
+	
+		<div class="container text-center" id="part2">
+			<h2> Get Started</h2>	
+		</div>
+        
+<!-- Segements that segregate suers into parents and sitters based on their needs -->
+
+        <div class="row">
+			<div class="column">
+				<div class="card">
+					<a href="{{ url_for('signup') }}" >NEED CARE</a></div>
+			</div>
+			<div class="column">
+				<div class="card">
+					<a href="{{ url_for('sittersignup2') }}">FIND JOBS</a>
+				</div>
+			</div>
+		</div>
+
+
+<!-- Middle section of the page showing the business' special features offered to a user -->
+
+		<div class="row homepage__schedules">
+			<div class="col s12">
+			  <h2 class="homepage-header" style="text-align:center; color: #ff6a0c">Whatever you need, we've got you covered</h2>
+			</div>
+			<div class="benefits">
+
+				
+				<div id="factors" class="col s12 m4">
+				  <h3 class="homepage-header homepage-header--schedule"><span class="glyphicon glyphicon-time" style="color:orange"></span> Regularly-scheduled</h3>
+				  <ul class="homepage__schedule-list">
+					<li><p>Part time sitters</p></li>
+					<li><p>Full time sitters</p></li>
+					<li><p>Before/after-school</p></li>
+				  </ul>
+				</div>
+				
+				<div id="factors" class="col s12 m4">
+				  <h3 class="homepage-header homepage-header--schedule"><span class="glyphicon glyphicon-globe" style="color:green"></span> Everyday babysitting</h3>
+				  <ul class="homepage__schedule-list">
+					<li><p>Date-night</p></li>
+					<li><p>Daytime</p></li>
+					<li><p>Infant care</p></li>
+				  </ul>
+				</div>
+				
+				<div id="factors" class="col s12 m4">
+				  <h3 class="homepage-header homepage-header--schedule"><span style="color:red">&hearts; </span>Special care provided</h3>
+				  <ul class="homepage__schedule-list">
+					<li><p>Special needs</p></li>
+					<li><p>Senior care</p></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+		
+<!-- About Us segment of the page -->
+
+		<div class="jumbotron">
+			<h2 id='about' class="display-4">About Us</h2>
+			<p class="lead">YourSitter is an online platform that brings together parents or elderly people in need and matches them with the best possible, trusted sitter satisfying their requirements. YourSitter provides a faster way to book a sitter and at the convenience of your doorstep.</p>
+			<hr class="my-4">
+			<p>Our website allows everyone: parents, elderly and the sitters to browse, request, post, update availability, list services and book an appointment. YourSitter is driven to deliver the best to its users, buid trust and deliver the best quality service to its customers.</p>
+			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		</div>
+	
+
+
+<!-- Footer section containing eexternal links to social media -->
+
+	<div class="footer">
+		<p>&#169 Developed by TEAM 18</p>
+		<a href="https://www.facebook.com/groups/2332208073704174/" target="_blank" class="fa fa-facebook"></a>
+		<a href="#" class="fa fa-instagram"></a>	
+	</div>
+	</body>
+	</html>

@@ -1,0 +1,219 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  /* background-image: url("crawling-baby.jpg"); */
+  background-image: url("footsteps5	.jpg");
+  /* background-image: url("https://www.shutterstock.com/image-vector/smiling-girl-160598192"); */
+  /* background-image: url("https://media.giphy.com/media/7JO6WR03QySW9LHJNJ/giphy.gif"); */
+  /* background: linear-gradient(#005580,White); */
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#mainpage {
+  position: relative;
+  height: 100vh;
+
+}
+
+#mainpage .mainpage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.mainpage {
+  /* max-width: 520px; */
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  
+}
+
+.mainpage .container {
+  position: relative;
+  height: 200px;
+  margin: 0px auto 20px;
+  z-index: -1;
+}
+
+.mainpage .container h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+  font-weight: 200;
+  margin: 10px 10px;
+  color: #fff;
+  
+  /* color: #211b19; */
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+		  text-shadow: 0px 0px 3px #ff0000;
+}
+.mainpage .container h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  font-weight: 200;
+  margin: 10px 10px;
+  color: #fff;
+  color: #133444;
+  /* color: #211b19; */
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+		  text-shadow: 0px 0px 3px #ff0000;
+}
+
+.mainpage .name {
+  position: relative;
+  height: 400px;
+  margin: 0px auto 20px;
+  z-index: -1;
+  padding: 10px 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.mainpage .name h1 {
+  margin-top: 50px;
+  font-size: 2em;
+  font-family: cursive;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+ 
+}
+
+.mainpage .name h3 {
+  margin-top: 50px;
+  font-size: 2em;
+  font-family: cursive;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #211b19;
+  color: #fff;
+  color: #133444;
+  margin: auto;
+  display: inline-block;
+ 
+}
+
+.mainpage .name p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #211b19;
+  margin-top: 175px;
+  display: inline-block;
+  color: #005580;
+  color: #fff;
+  /* color: #133444; */
+  
+  
+}
+
+.button {
+  border-radius: 4px;
+  line-height: 180%;
+  /* background-color: transparent; */
+  background-color: #ff6747;
+  border: 3px solid #ff6747;
+  /* color: #FF6747; */
+  color: white;
+  font-family: verdana;
+  font-size: 1.2em;
+  padding: 10px 12px;
+  text-decoration: none;
+  transition: background-color ease 400ms;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.footer {
+	font-size: 1.1em;
+	color: white;
+	width: 100%; /*Width is 100% of total width of the screen*/
+	height: 4%; /*Height is the 2% of the total screen height which is 40 px*/
+}
+
+@media only screen and (max-width: 767px) {
+  /* #mainpage {
+	  height: 100vh;
+	  background: url("bkgd.jpg");
+  } */
+  
+  .mainpage .container h1 {
+    font-size: 148px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* #mainpage {
+	  height: 100vh;
+	  background: url("bkgd.jpg");
+  } */
+  .mainpage .container {
+    height: 148px;
+    margin: 0px auto 10px;
+  }
+  .mainpage .container h1 {
+    font-size: 86px;
+  }
+  .mainpage .name p {
+    font-size: 16px;
+  }
+  
+  .mainpage .name h3 {
+    font-size: 26px;
+  }
+  .button {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
+  .footer {
+	  font-size: 14px;
+	  width: 100%;
+  }
+  
+}
+
