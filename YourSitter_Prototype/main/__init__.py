@@ -19,12 +19,10 @@ app=application
 app.config['SECRET_KEY'] = 'Team18'
 
 # path to connect the application to the MySQL database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Team18:araujoteam18@team18instance.crpo3dbnct0f.us-east-2.rds.amazonaws.com/team18instance'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Team18:araujoteam18@mysqldb.crpo3dbnct0f.us-east-2.rds.amazonaws.com/team18db'
 
+##path to connect the application to the local SQLite database
 
-## path to connect the application to the local SQLite database
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://Team18:araujoteam18@mysqldb.crpo3dbnct0f.us-east-2.rds.amazonaws.com/team18db'
 # project_dir = os.path.dirname(os.path.abspath(__file__))
 # database_file = "sqlite:///{}".format(os.path.join(project_dir, "yoursitter.db"))
 # app.config['SQLALCHEMY_DATABASE_URI']= database_file
